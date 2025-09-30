@@ -1,4 +1,4 @@
-package com.biaft.mvc.roject;
+package com.biaft.mvc.project;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

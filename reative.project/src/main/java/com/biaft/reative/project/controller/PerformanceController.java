@@ -1,7 +1,7 @@
-package com.biaft.reative.roject.controller;
+package com.biaft.reative.project.controller;
 
-import com.biaft.reative.roject.dto.DataDto;
-import com.biaft.reative.roject.metrics.MemoryMetricsService;
+import com.biaft.reative.project.dto.DataDto;
+import com.biaft.reative.project.metrics.MemoryMetricsService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

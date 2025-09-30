@@ -1,4 +1,4 @@
-package com.biaft.reative.roject;
+package com.biaft.reative.project;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,18 +1,18 @@
-package com.biaft.reative.roject.dto;
+package com.biaft.mvc.project.dto;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.Instant;
-import lombok.Getter;
-import lombok.Setter;
 
 @Getter
 @Setter
+@NoArgsConstructor
 public class DataDto {
     private int id;
     private String name;
     private long timestamp;
-
-    public DataDto() {
-    }
 
     public DataDto(int id, String name) {
         this.id = id;

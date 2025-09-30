@@ -9,6 +9,8 @@
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.40/lombok-1.18.40.jar" />
         </processorPath>
+        <module name="project" />
+        <module name="project (1)" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -19,6 +21,8 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="mvc.project" options="-parameters" />
+      <module name="project" options="-parameters" />
+      <module name="project (1)" options="-parameters" />
       <module name="reative.project" options="-parameters" />
     </option>
   </component>

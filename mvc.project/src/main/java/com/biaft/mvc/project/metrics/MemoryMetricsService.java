@@ -1,4 +1,4 @@
-package com.biaft.mvc.roject.metrics;
+package com.biaft.mvc.project.metrics;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
