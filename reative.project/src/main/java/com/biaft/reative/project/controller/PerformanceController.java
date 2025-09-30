@@ -25,13 +25,19 @@ public class PerformanceController {
 
     @GetMapping("/small-payload/fast-io")
     public Mono<DataDto> getSmallPayloadFastIo() {
-        return Mono.just(new DataDto(1, "Small Payload Fast IO Result"));
+        return Mono.defer(() -> {
+            this.memoryMetricsService.recordMemoryUsage("webflux-small-payload-fast-io");
+            return Mono.just(new DataDto(1, "Small Payload Fast IO Result"));
+        });
     }
 
     @GetMapping("/small-payload/slow-io")
     public Mono<DataDto> getSmallPayloadSlowIo() {
         return Mono.delay(SLOW_IO_DELAY)
-                .map(delay -> new DataDto(1, "Small Payload Slow IO Result"));
+                .map(delay -> {
+                    this.memoryMetricsService.recordMemoryUsage("webflux-small-payload-slow-io");
+                    return new DataDto(1, "Small Payload Slow IO Result");
+                });
     }
 
     @GetMapping("/large-payload/fast-io")

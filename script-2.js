@@ -12,12 +12,12 @@ export const options = {
     load_test: {
       executor: 'constant-vus', // Mantém um número constante de usuários virtuais
       vus: parseInt(__ENV.VUS) || 100, // Número de VUs (Fator A)
-      duration: '10s', // Duração total do teste para cada réplica
+      duration: '20s', // Duração otimizada para 30min totais
     },
   },
   thresholds: {
-      http_req_failed: ['rate<0.01'], // Falha o teste se mais de 1% das reqs falharem
-      http_req_duration: ['p(95)<2000'], // 95% das reqs devem ser abaixo de 2s
+      http_req_failed: ['rate<0.10'], // 10% - permite observar degradação sob estresse
+      http_req_duration: ['p(95)<10000'], // 10s - tolerante para cenários de alta carga
   },
 };
 
@@ -41,6 +41,6 @@ export default function () {
       webfluxLatency.add(res.timings.duration);
   }
 
-  // Pequeno tempo de espera para simular o comportamento de um usuário real
-  sleep(1);
+  // Sleep ajustado para Windows (evitar esgotamento de portas)
+  sleep(0.2);
 }

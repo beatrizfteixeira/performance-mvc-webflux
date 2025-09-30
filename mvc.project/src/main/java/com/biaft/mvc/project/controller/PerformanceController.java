@@ -24,12 +24,14 @@ public class PerformanceController {
 
     @GetMapping("/small-payload/fast-io")
     public DataDto getSmallPayloadFastIo() {
+        this.memoryMetricsService.recordMemoryUsage("mvc-small-payload-fast-io");
         return new DataDto(1, "Small Payload Fast IO Result");
     }
 
     @GetMapping("/small-payload/slow-io")
     public DataDto getSmallPayloadSlowIo() throws InterruptedException {
         Thread.sleep(SLOW_IO_DELAY_MILLIS);
+        this.memoryMetricsService.recordMemoryUsage("mvc-small-payload-slow-io");
         return new DataDto(1, "Small Payload Slow IO Result");
     }
 
